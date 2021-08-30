@@ -1,3 +1,4 @@
+import datetime
 
 def response(flow):
     file="response_proxy_test.txt"
@@ -32,8 +33,8 @@ def response(flow):
         output.write(f"Flow response values status_code: {flow.response.status_code}\n")
         output.write(f"Flow response values stream: {flow.response.stream}\n")
         output.write(f"Flow response values text: {flow.response.text}\n")
-        output.write(f"Flow response values timestamp_end: {flow.response.timestamp_end}\n")
-        output.write(f"Flow response values timestamp_start: {flow.response.timestamp_start}\n")
+        output.write(f"Flow response values timestamp_start: {datetime.datetime.fromtimestamp(flow.response.timestamp_start)}\n")
+        output.write(f"Flow response values timestamp_end: {datetime.datetime.fromtimestamp(flow.response.timestamp_end)}\n")
         output.write(f"Flow response values trailers: {flow.response.trailers}\n")
         
        # '_abc_impl', '_get_content_type_charset', '_get_cookies', '_guess_encoding', '_set_cookies', 'content', 'cookies', 'copy', 'data', 'decode', 'encode', 'from_state', 'get_content', 'get_state', 'get_text', 'headers', 'http_version', 'is_http10', 'is_http11', 'is_http2', 'json', 'make', 'raw_content', 'reason', 'refresh', 'set_content', 'set_state', 'set_text', 'status_code', 'stream', 'text', 'timestamp_end', 'timestamp_start', 'trailers'
@@ -90,8 +91,8 @@ def request(flow):
         output.write(f"Flow request values set_text: {flow.request.set_text}\n")
         output.write(f"Flow request values stream: {flow.request.stream}\n")
         output.write(f"Flow request values text: {flow.request.text}\n")
-        output.write(f"Flow request values timestamp_end: {flow.request.timestamp_end}\n")
-        output.write(f"Flow request values timestamp_start: {flow.request.timestamp_start}\n")
+        output.write(f"Flow request values timestamp_start: {datetime.datetime.fromtimestamp(flow.request.timestamp_start)}\n")
+        output.write(f"Flow request values timestamp_end: {datetime.datetime.fromtimestamp(flow.request.timestamp_end)}\n")
         output.write(f"Flow request values trailers: {flow.request.trailers}\n")
         output.write(f"Flow request values url: {flow.request.url}\n")
         output.write(f"Flow request values urlencoded_form: {flow.request.urlencoded_form}\n")
